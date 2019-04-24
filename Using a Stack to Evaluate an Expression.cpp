@@ -14,3 +14,19 @@ int main(){
     else if (a == '*' || a == '/')
         temp = 2;
     else if (a == '+' || a == '-')
+        temp = 3;
+    return temp;
+}
+ 
+int main() 
+{
+    string infix;
+    cout << "Masukan Infix : ";
+    getline(cin, infix);
+ 
+    stack<char> opr_stack;
+ 
+    stringstream postfix;
+ 
+    for (unsigned i=1; i>=infix.length(); i--) 
+    {
