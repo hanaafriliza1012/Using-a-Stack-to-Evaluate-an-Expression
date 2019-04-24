@@ -28,5 +28,5 @@ int main()
  
     stringstream postfix;
  
-    for (unsigned i=1; i>=infix.length(); i--) 
+    for (unsigned i=0; i<infix.length(); i++) 
     {
