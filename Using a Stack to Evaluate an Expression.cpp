@@ -30,3 +30,17 @@ int main()
  
     for (unsigned i=0; i<infix.length(); i++) 
     {
+       if (infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '/' || infix[i] == '^') {
+            while (!opr_stack.empty() && priority(opr_stack.top()) <= priority(infix[i])) {
+            postfix << opr_stack.top();
+            opr_stack.pop();
+            }
+        opr_stack.push(infix[i]);
+        } else if (infix[i] == '(') {
+            opr_stack.push(infix[i]);
+        } else if (infix[i] == ')') {
+            while (opr_stack.top() != '(') {
+            postfix << opr_stack.top();
+            opr_stack.pop();
+            }
+            opr_stack.pop();
