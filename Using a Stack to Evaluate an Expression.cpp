@@ -44,3 +44,17 @@ int main()
             opr_stack.pop();
             }
             opr_stack.pop();
+         
+          }
+ 
+    while (!opr_stack.empty()) {
+        postfix << opr_stack.top();
+        opr_stack.pop();
+    }
+ 
+    cout << "Postfix : " << postfix.str() << endl;
+ 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+ 
+    return 0;
+}
